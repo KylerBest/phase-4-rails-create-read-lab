@@ -11,7 +11,7 @@ function PlantPage() {
     // no need to use http://localhost:3000 here
     fetch("/plants")
       .then((r) => r.json())
-      .then((plantsArray) => {
+      .then(plantsArray => {
         setPlants(plantsArray);
       });
   }, []);
@@ -21,9 +21,7 @@ function PlantPage() {
     setPlants(updatedPlantsArray);
   }
 
-  const displayedPlants = plants.filter((plant) => {
-    return plant.name.toLowerCase().includes(searchTerm.toLowerCase());
-  });
+  const displayedPlants = plants.filter(plant => plant.name.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
     <main>
